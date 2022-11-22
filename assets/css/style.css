@@ -4412,7 +4412,7 @@ header .header-top-bar .top-social-icons a:hover {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #001659;
   -webkit-text-fill-color: transparent;
-  opacity: 0.1;
+  opacity: 0.4;
   margin-bottom: 0;
   position: absolute;
   -webkit-transform: translateX(-50%);
@@ -4482,9 +4482,9 @@ header .header-top-bar .top-social-icons a:hover {
   font-size: 160px;
   line-height: 1;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #001659;
+  -webkit-text-stroke-color: #f58f0b;
   -webkit-text-fill-color: transparent;
-  opacity: 0.1;
+  opacity: 100;
   top: 42%;
   position: absolute;
   left: -100px;
@@ -7740,7 +7740,7 @@ header .header-top-bar .top-social-icons a:hover {
   width: 90%;
   margin: 0 auto;
   background: #fff;
-  margin-top: -50px;
+  margin-top: 0px;
   position: relative;
   overflow: hidden;
   clear: both;
