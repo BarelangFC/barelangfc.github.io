@@ -474,9 +474,9 @@ header.header-5 .header-right-elements a {
   #hero {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 550px 300px;
-    margin-top: -190px;
-    margin-bottom: -200px;
+    background-size: 100%;
+    margin-top: -18em;
+    margin-bottom: -21em;
   }
 }
 
