@@ -1,40 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <!-- ========== Meta Tags ========== -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="modinatheme">
-    <!-- ======== Page title ============ -->
-    <title>BarelangFC-Polibatam</title>
-    <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="assets/img/home2/BFC.png">
-    <!-- ===========  All Stylesheet ================= -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BARELANGFC-POLIBATAM</title>
     <!--  Icon css plugins -->
-    <link rel="stylesheet" href="assets/css/icons.css">
-    <!--  animate css plugins -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!--  magnific-popup css plugins -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!--  owl carosuel css plugins -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- metis menu css file -->
-    <link rel="stylesheet" href="assets/css/metismenu.css">
-    <!--  owl theme css plugins -->
-    <link rel="stylesheet" href="assets/css/owl.theme.css">
-    <!--  Bootstrap css plugins -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!--  main style css file -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- template main style css file -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.csss" />
     
+    <link rel="stylesheet" href="./assets/css/stylerobot.css">
+    <!--  animate css plugins -->
+    <link rel="stylesheet" href="./assets/css/animate.css">
 </head>
 
-<body class="body-wrapper">    
-    <!-- preloader -->
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- NAVBAR -->
+    <!-- ms-auto untuk otomatis setup kanan Kiri -->
     <div id="preloader" class="preloader">
         <div class="animation-preloader">
             <div class="spinner">                
@@ -95,78 +81,69 @@
             </div>
         </div>
     </div>
-
- 
-     <!-- welcome content start from here -->
-     <header class="header-wrap header-1 ">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/img/home2/BFCDEPAN.png" alt="logo">
-                </a>
-            </div>
-            <div class="header-right-area d-flex">
-                <div class="main-menu d-none d-xl-block">
-                    <ul>
-                        
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="team.html">TEAM</a></li>
-                        <li><a href="news.html">PUBLICATION</a></li>
-                        <li><a href="robot.html">ROBOT</a></li>
-                        <li><a href="contact.html">ACHIEVEMENTS</a></li>
-                        <li>
-                            <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
-                            <div class="search-box">
-                                <form action="#">
-                                    <input type="text" placeholder="Search">
-                                    <button type="submit"><i class="fal fa-search"></i></button>
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" ><img src="./assets/images/home2/BFCDEPAN.png" alt="logo" width="200" height="59" class="d-inline-block align-text-top" ></a>
+            
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav  ms-auto">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="team.html">Team</a>
+                    <a class="nav-link" href="robot.html">Robot</a>
+                    <a class="nav-link" href="publication.html">Publication</a>
+                    <a class="nav-link" href="achievements.html">Achievements</a>
                 </div>
-                <div class="header-right-elements d-flex align-items-center justify-content-between">
-                    
-                    <a href="#" class="side-menu-toggle d-none d-xl-block"><i class="fal fa-bars"></i></a>
-                    <div class="d-inline-block ms-4 d-xl-none">
-                        <div class="mobile-nav-wrap">                    
-                            <div id="hamburger">
-                                <i class="fal fa-bars"></i>
-                            </div>
-                            <!-- mobile menu - responsive menu  -->
-                            <div class="mobile-nav">
-                                <button type="button" class="close-nav">
-                                    <i class="fal fa-times-circle"></i>
-                                </button>
-                                <nav class="sidebar-nav">
-                                    <ul class="metismenu" id="mobile-menu">
-                                        
-                                        <li><a href="index.html">HOME</a></li>
-                                        <li><a href="team.html">TEAM</a></li>
-                                        <li><a href="news.html">PUBLICATION</a></li>
-                                        <li><a href="robot.html">ROBOT</a></li>
-                                        <li><a href="contact.html">ACHIEVEMENTS</a></li>
-                                    </ul>
-                                </nav>
-        
-                                <div class="action-bar">
-                                    <a href="mailto:barelangfc@gmail.com"><i class="fal fa-envelope"></i>barelangfc@gmail.com</a>
-                                    <a href="https://wa.me/message/VTSBBNHH6WBBH1?src=qr"><i class="fal fa-phone"></i>+62 852 7437 6491</a>
-                                    
-                                </div>
-                            </div>                            
+            </div>
+            <div class="header-right-elements d-flex align-items-center justify-content-between">
+                <a href="#" class="side-menu-toggle d-none d-xl-block"><i class="fal fa-bars"></i></a>
+                <div class="d-inline-block ms-4 d-xl-none">
+                    <div class="mobile-nav-wrap">                    
+                        <div id="hamburger">
+                            <i class="fal fa-bars"></i>
                         </div>
-                        <div class="overlay"></div>
+                        <!-- mobile menu - responsive menu  -->
+                        <div class="mobile-nav">
+                            <button type="button" class="close-nav">
+                                <i class="fal fa-times-circle"></i>
+                            </button>
+                            <nav class="sidebar-nav">
+                                <ul class="metismenu" id="mobile-menu">
+                                    
+                                    <li><a href="index.html">HOME</a></li>
+                                    <li><a href="team.html">TEAM</a></li>
+                                    <li><a href="publication.html">PUBLICATION</a></li>
+                                    <li><a href="robot.html">ROBOT</a></li>
+                                    <li><a href="achievements.html">ACHIEVEMENTS</a></li>
+                                </ul>
+                            </nav>
+    
+                            <div class="action-bar">
+                                <a href="mailto:barelangfc@gmail.com"><i class="fal fa-envelope"></i>barelangfc@gmail.com</a>
+                                <a href="https://wa.me/message/VTSBBNHH6WBBH1?src=qr"><i class="fal fa-phone"></i>+62 852 7437 6491</a>
+                                
+                            </div>
+                        </div>                            
                     </div>
+                    <div class="overlay"></div>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="page-banner-wrap bg-cover " style="background-image: url('assets/img/robot/baground.png')">
-        
-    </div>
+    <!-- HERO -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center" > 
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Robot -->
     <section class="our-team-wrapper section-padding">
         <div class="container">
             <div class="row">
@@ -179,10 +156,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-xl-4 col-12">
+                <div class="col-md-6 col-xl-4 col-12" data-aos="fade-right" data-aos-delay="150">
                     <div class="single-team-member">
                         <div class="team-img">
-                            <img src="assets/img/robot/1.png" alt="">
+                            <img src="assets/images/robot/1.png" alt="">
                         </div>
                         <div class="team-details-bar">
                             <div class="member-details">
@@ -192,14 +169,14 @@
                                 </div>
                                 
                             </div>
-                            <a href="services-details.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
+                            <a href="robot2016.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4 col-12">
+                <div class="col-md-6 col-xl-4 col-12" data-aos="fade-up" data-aos-delay="150">
                     <div class="single-team-member">
                         <div class="team-img">
-                            <img src="assets/img/robot/3.png" alt="">
+                            <img src="assets/images/robot/3.png" alt="">
                         </div>
                         <div class="team-details-bar">
                             <div class="member-details">
@@ -209,14 +186,14 @@
                                 </div>
                                 
                             </div>
-                            <a href="services-details.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
+                            <a href="robot2019.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-4 col-12">
+                <div class="col-md-6 col-xl-4 col-12" data-aos="fade-left" data-aos-delay="150">
                     <div class="single-team-member">
                         <div class="team-img">
-                            <img src="assets/img/robot/2.png" alt="">
+                            <img src="assets/images/robot/2.png" alt="">
                         </div>
                         <div class="team-details-bar">
                             <div class="member-details">
@@ -226,7 +203,7 @@
                                 </div>
                                 
                             </div>
-                            <a href="services-details.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
+                            <a href="robot2022.html" class="read-more">Read More <i class="fal fa-arrow-right"></i></a>
                         </div>
                         
                     </div>
@@ -235,129 +212,87 @@
         </div>
     </section>
 
-   
+     <!-- FOOTER -->
+     	<!-- footer section start -->
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<a href="index.html"><img src="assets/images/home2/BFCDEPAN.png" alt="" class="img-fluid logo-footer"></a>
+                      <div class="footer-about">
+                          <p>Barelang FC is a robot team from the Batam State Polytechnic, this Team Was Established To Conduct Research And Development And To Participate In National And International Level Competitions Every Year In The Field Of Humanoid Robot Soccer Since 2011.</p>
+                      </div>
 
-    <footer class="footer-2 footer-wrap">
-        <div class="footer-widgets-wrapper text-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-8 pe-xl-0 col-sm-6 col-10">
-                        <div class="single-footer-wid site_info_widget">
-                            <div class="wid-title">
-                                <h3>Get In Touch</h3>
-                            </div>
-                            <div class="contact-us">
-                                <div class="single-contact-info">
-                                    <div class="icon">
-                                        <i class="fal fa-phone"></i>
-                                    </div>
-                                    <div class="contact-info">
-                                        <li><a href="https://wa.me/message/VTSBBNHH6WBBH1?src=qr">+62 852 7437 6491</a></li>
-                                    </div>
-                                </div>
-                                <div class="single-contact-info">
-                                    <div class="icon">
-                                        <i class="fal fa-envelope"></i>
-                                    </div>
-                                    <div class="contact-info">
-                                        <li><a href="mailto:barelangfc@gmail.com">barelangfc@gmail.com</a></li>
-                                        
-                                    </div>
-                                </div>
-                                <div class="single-contact-info">
-                                    <div class="icon">
-                                        <i class="fal fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="contact-info">
-                                        <li><a href="https://www.google.com/maps/place/Politeknik+Negeri+Batam/@1.1186351,104.0462732,17z/data=!3m1!4b1!4m5!3m4!1s0x31d98921856ddfab:0xf9d9fc65ca00c9d!8m2!3d1.1186351!4d104.0484619">Batam Centre, Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau <br>
-                                            Kode Pos 29461</a></li>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+					</div>
+                    <div class="fotmage "data-aos="fade-left" class="text-uppercase" >
+                        <img src="./assets/images/home2/adult.png" >
                     </div>
-
-                    <div class="col-sm-6 offset-xl-1 col-xl-3 ps-xl-5 col-12">
-                        <div class="single-footer-wid">
-                            <div class="wid-title">
-                                <h3>Quick Links</h3>
+					<div class="col-md-3">
+						<div class="useful-link">
+							<h2>Useful Links</h2>
+							
+							<div class="use-links">
+								<li><a href="index.html"><i class="fa-solid  fa fa-angle-double-right"></i> Home</a></li>
+								<li><a href="team.html"><i class="fa-solid fa fa-angle-double-right"></i> Team</a></li>
+								<li><a href="robot.html"><i class="fa-solid fa fa-angle-double-right"></i> Robot</a></li>
+								<li><a href="publication.html"><i class="fa-solid fa fa-angle-double-right"></i> Publication</a></li>
+                                <li><a href="achievements.html"><i class="fa-solid fa fa-angle-double-right"></i> Achievements</a></li>
                             </div>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="team.html">Team</a></li>
-                                <li><a href="services.html">Publication</a></li>
-                                <li><a href="robot.html">Robot</a></li>
-                                <li><a href="services.html">Achievements</a></li>
+						</div>
 
-                            </ul>
-                        </div>
-                    </div> <!-- /.col-lg-3 - single-footer-wid -->
-
-               
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-cta-wrapper">
-            <div class="container">
-                <div class="footer-cta-bg-wrapper">
-                    <div class="row justify-content-around align-items-center">
-                        <div class="col-lg-3 col-md-3 col-12">
-                            <div class="footer-logo">
-                                <a href="index.html">
-                                    <img src="assets/img/home2/BFCDEPAN1.png" alt="logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-5 ps-lg-0 offset-lg-1 col-12">
-                            <div class="footer-middle-text mt-4 mb-4 mt-md-0 mb-md-0 text-white">
-                                <p>WE ALWAYS TRY OUR BEST TO BE THE CHAMPION EVERY YEAR</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4 col-12">
-                            <div class="footer-social-icon ms-lg-5 text-lg-md-end">
-                                <a href="https://www.youtube.com/@barelangfc628"><i class="fab fa-youtube"></i>
-                                    
-                                </a>
-                                <a href="https://instagram.com/barelangfc.polibatam?igshid=YmMyMTA2M2Y="><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+					</div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+							<h2>Follow Us</h2>
+							
+							<div class="social-icons">
+								<li><a href="https://www.youtube.com/@barelangfc628"><i class="fab fa-youtube"></i> Youtube</a></li>
+								<li><a href="https://instagram.com/barelangfc.polibatam?igshid=YmMyMTA2M2Y="><i class="fa-brands fab fa-instagram"></i> Instagram</a></li>
+								<li><a href="https://github.com/barelangfc"><i class="fa-brands fab fa-github"></i> Github</a></li>
+							</div>                  
+						</div>
                     </div>
-                </div>
-            </div>
-        </div>
+					<div class="col-md-3">
+						<div class="address">
+							<h2>Address</h2>
+							
+							<div class="address-links">
+								<li> <a href="https://www.google.com/maps/place/Politeknik+Negeri+Batam/@1.1186351,104.0462732,17z/data=!3m1!4b1!4m5!3m4!1s0x31d98921856ddfab:0xf9d9fc65ca00c9d!8m2!3d1.1186351!4d104.0484619"><i class="fa-solid fas fa-map-marker-alt"></i> Batam Centre, Jl. Ahmad Yani, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</li>
+								   <li><a href="https://wa.me/message/VTSBBNHH6WBBH1?src=qr"><i class="fa-solid fal fa-phone"></i> +62 852 7437 6491</a></li>
+								   <li><a href="mailto:barelangfc@gmail.com"><i class="fa-solid fal fa-envelope"></i> barelangfc@gmail.com</a></li>
+							</div>
+                            
+                                
+                                
+						</div>
+					</div>
+                  
+				</div>
+			</div>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="text-center">
-                        <div class="copyright-info">
-                            <p>&copy; 2022 Copyright By <a href="index.html">BarelangFC-Polibatam</a>. All Rights Reserved</p>                            
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-        </div>
-    </footer>   
+		</footer>
+		<!-- footer section end -->
+		<!-- footer copy right section start -->
+		<section id="copy-right">
+			<div class="copy-right-sec"><i class="fa-solid fal fa-copyright"></i>  
+				2022 Copyright By <a href="index.html">BarelangFC-Polibatam</a>. All Rights Reserved</a> 
 
-    <!--  ALl JS Plugins
-    ====================================== -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/modernizr.min.js"></script>
-    <script src="assets/js/jquery.easing.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/imageload.min.js"></script>
-    <script src="assets/js/scrollUp.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/metismenu.js"></script>
-    <script src="assets/js/ajax-mail.js"></script>
-    <script src="assets/js/active.js"></script>
+              
+			</div>
+
+		</section>
+		<!-- footer copy right section end -->
+     
+    <script>src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/active.js"></script>
+    <script src="./assets/js/imageload.min.js"></script>
+    <script src="./assets/js/magnific-popup.min.js"></script>
+    <script src="./assets/js/scrollUp.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
