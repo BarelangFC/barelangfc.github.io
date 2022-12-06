@@ -1399,36 +1399,13 @@ header.header-5 .header-right-elements a {
     color: #ff9900;
 
   }
-  @media (max-width: 1191px) {
-    .block-contents .section-title h2 {
-      font-size: 53px;
-    }
-  }
-  @media (max-width: 991px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
+
   @media (max-width: 767px) {
     .block-contents .section-title h2 {
-      font-size: 50px;
+      font-size: 35px;
     }
   }
-  @media (max-width: 500px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
-  @media (max-width: 375px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
-  @media (max-width: 360px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
+
   .section-padding1{
         background: #2e8d86;
         

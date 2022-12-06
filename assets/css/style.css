@@ -449,11 +449,21 @@ header.header-5 .header-right-elements a {
 
 /* HERO */
 #hero {
-    background: linear-gradient(rgba(var(--c-brand-rgb), 0.507), rgba(var(--c-brand-rgb), 0.438)), url(../images/home2/cover1.png);
+    background:  url(../images/home2/cover1.png);
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
 }
-
+@media (max-width: 576px) {
+  #hero {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    margin-top: -12em;
+    margin-bottom: -12em;
+    
+  }
+}
 .display-1{
     color: #FF5E14;
     font-size: 60px;
@@ -550,6 +560,16 @@ header.header-5 .header-right-elements a {
     color: #001659;
     font-size: 22px;
 }
+@media (max-width: 767px) {
+  .container .about-tim p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+}
+}
 
 .block-contents blockquote {
     border-left: 5px solid #FF5E14;
@@ -561,6 +581,18 @@ header.header-5 .header-right-elements a {
     margin-top: 15px;
     margin-bottom: 20px;
   }
+  @media (max-width: 767px) {
+    .block-contents blockquote {
+      border-left: 5px solid #FF5E14;
+      font-style: italic;
+      padding-left: 20px;
+      color: #001659;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: -50px;
+      margin-bottom: 20px;
+    }
+  }
 
 .block-contents .section-title h2 {
     margin-top: 20px;
@@ -569,36 +601,17 @@ header.header-5 .header-right-elements a {
     color: #ff9900;
 
   }
-  @media (max-width: 1191px) {
-    .block-contents .section-title h2 {
-      font-size: 53px;
-    }
-  }
-  @media (max-width: 991px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
+
   @media (max-width: 767px) {
     .block-contents .section-title h2 {
-      font-size: 50px;
+      
+      font-size: 30px;
+      
+      width: 360px;
+     
     }
   }
-  @media (max-width: 500px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
-  @media (max-width: 375px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
-  @media (max-width: 360px) {
-    .block-contents .section-title h2 {
-      font-size: 50px;
-    }
-  }
+ 
   .section-padding1{
         background: #cccccc;
         
@@ -648,7 +661,17 @@ header.header-5 .header-right-elements a {
     margin-bottom: 100px;
     
 }
-
+@media (max-width: 767px) {
+  .yutub{
+    width: 100%;
+    margin:0 auto;
+    
+    border-radius: 6px;
+    overflow: hidden;
+    
+    
+}
+}
 /* Robot */
 /* .section-rotate-title {
     font-size: 160px;
