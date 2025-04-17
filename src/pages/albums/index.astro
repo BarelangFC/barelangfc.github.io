@@ -1,0 +1,63 @@
+---
+import { renderDate } from "../../lib/date";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { CalendarHeartIcon, MapPin } from "lucide-react";
+import { Image } from "astro:assets";
+const albums = await getCollection("album");
+albums.sort(function (a, b) {
+    return b.data.date.getTime() - a.data.date.getTime();
+});
+---
+
+<Layout title="Albums">
+    <div class="container py-12">
+        <div
+            class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+        >
+            <h1
+                class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary"
+            >
+                Class Albums
+            </h1>
+            <p class="mx-auto max-w-[700px] text-muted-foreground">
+                Photos of memories from our class activities
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                albums.map(({ id, data }) => (
+                    <a href={`/albums/${id}`} class="group">
+                        <Card className="overflow-hidden p-0 shadow-none group-hover:bg-muted">
+                            <div class="aspect-video overflow-hidden">
+                                <Image
+                                    src={data.cover}
+                                    alt={`Foto ${data.title}`}
+                                    class="object-cover w-full h-full group-hover:scale-125 group-hover:rotate-2 transition-transform"
+                                />
+                            </div>
+                            <CardHeader className="px-6 pb-6 space-y-2">
+                                <CardTitle className="text-lg text-primary">
+                                    {data.title}
+                                </CardTitle>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <Badge variant="secondary">
+                                        <MapPin />
+                                        {data.location}
+                                    </Badge>
+                                    <Badge variant="secondary">
+                                        <CalendarHeartIcon />
+                                        {renderDate(data.date)}
+                                    </Badge>
+                                </div>
+                            </CardHeader>
+                        </Card>
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</Layout>

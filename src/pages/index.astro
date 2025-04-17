@@ -1,0 +1,262 @@
+---
+
+import { Button } from '@/components/ui/button';
+import Layout from '../layouts/Layout.astro';
+import { ArrowRight, Calendar, Trophy, Users, Newspaper, BookOpen, BotIcon as Robot } from 'lucide-react';
+import { Link } from '@/components/link';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import TeamSection from '@/components/team-home';
+const teamMembers = await getCollection("teamMember");
+const achievements = await getCollection("achievement");
+achievements.sort(function(a,b){
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+const achievement = achievements.slice(0, 4);
+const divisions = await getCollection("division");
+const team = teamMembers.slice(0, 4);
+team.sort(function(a,b){
+  return a.data.angkatan.getTime() - b.data.angkatan.getTime();
+});
+const yearsTeam = teamMembers.map(({data})=>data.angkatan.getFullYear());
+const yearsUniqueTeam = [...new Set(yearsTeam)].sort((a, b) => b - a); // Urutkan tahun dari yang terbesar ke terkecil
+const robots = await getCollection("robot");
+robots.sort(function(a,b){
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+const robot = robots.slice(0, 3);
+const publications = await getCollection("publication");
+publications.sort(function(a,b){
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+const publication = publications.slice(0, 4);
+const news = await getCollection("news");
+news.sort(function(a,b){
+  return b.data.date.getTime() - a.data.date.getTime();
+});
+const yearsNews = news.map((news) => news.data.date.getFullYear());
+const yearsUniqueNews = yearsNews.filter((value, index, array) => array.indexOf(value) === index);
+const latestNews = news.slice(0, 3);
+import ParticlesBackground from "../components/ParticlesBackground.astro";
+import RobotSoccerPlayer from '@/components/RobotSoccerPlayer.astro';
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<div class="flex flex-col min-h-screen">
+		{/* Hero Section */}
+		<section class="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+		  {/* Particles Background */}
+		  <ParticlesBackground />
+		  <div class="container px-4 md:px-6">
+			<div class="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+			  <div class="space-y-4">
+				<h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+				  Welcome to BarelangFC!
+				</h1>
+				<p class="max-w-[600px] text-gray-300 md:text-xl">
+				  This is a humanoid robot research team
+				</p>
+				<!-- <div class="flex flex-col gap-2 min-[400px]:flex-row">
+					<Link className="bg-amber-600 hover:bg-amber-500" size="lg" href="/robots">
+					  Explore Our Robots <ArrowRight className="ml-2 h-4 w-4" />
+					</Link>
+				  <Button
+					variant="outline"
+					size="lg"
+					className="bg-transparent text-white border-white hover:bg-white hover:text-gray-900"
+				  >
+					<a href="/divisions">Our Divisions</a>
+				  </Button>
+
+				</div> -->
+			  </div>
+			  <div class="relative h-[300px] lg:h-[400px] rounded-xl overflow-hidden">
+				<img
+				  src="/team.jpeg?height=400&width=600"
+				  alt="Robotics team working on a project"
+				  class="object-cover"
+				/>
+			  </div>
+			</div>
+		  </div>
+		</section>
+
+		{/* Divisions Section */}
+		<section class="w-full py-12 md:py-24 bg-white">
+			<div class="container px-4 md:px-6">
+			  <div class="flex flex-col items-center justify-center space-y-4 text-center">
+				<div class="space-y-2">
+				  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Divisions</h2>
+				  <p class="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+					Six specialized teams pushing the boundaries of robotics technology
+				  </p>
+				</div>
+			  </div>
+			  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+				{divisions.map((division, index) => (
+				  <div
+					/*key={index}*/
+					class="flex flex-col p-6 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+				  >
+					<Image src={division.data.icon} alt={division.data.name} class="w-10 h-10 text-gray-700 mb-2" />
+					<h3 class="text-xl font-bold mb-2">{division.data.name}</h3>
+					<p class="text-gray-500 flex-grow">{division.data.description}</p>
+					<a
+					  href={`/divisions#${division.data.name.toLowerCase().replace(/\s+/g, "-")}`}
+					  class="text-amber-600 mt-4 inline-flex items-center"
+					>
+					  Learn more <ArrowRight className="ml-1 h-4 w-4" />
+					</a>
+				  </div>
+				))}
+			  </div>
+			</div>
+		  </section>
+
+		  {/* Robot */}
+		  <section class="w-full py-12 md:py-24 bg-gray-50">
+			<div class="container px-4 md:px-6">
+			  <div class="flex flex-col items-center justify-center space-y-4 text-center">
+				<div class="space-y-2">
+				  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Robot</h2>
+				  <p class="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+					Explore our Humanoid Robot
+				  </p>
+				</div>
+			  </div>
+			  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+				{robot
+				.map((robot, index) => (
+				  <div /*key={index}*/ class="flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+					<div class="relative aspect-square">
+					  <img src={robot.data.image || "/placeholder.svg"} alt={robot.data.name} /*fill*/ class="object-cover h-full w-full" />
+					</div>
+					<div class="flex flex-col p-6">
+					  <h3 class="text-xl font-bold mb-2">{robot.data.name}</h3>
+					  <p class="text-sm text-gray-500 mb-2">{robot.data.date.getFullYear()}</p>
+					  <p class="text-gray-500 flex-grow mb-4">{robot.data.description}</p>
+					</div>
+				  </div>
+				))}
+			  </div>
+			  <div class="flex justify-center mt-8">
+				  <Link variant="outline" href="/robots">View All Robot</Link>
+			  </div>
+			</div>
+		  </section>
+
+		  <!-- {/* Latest News */}
+		  <section class="w-full py-12 md:py-24 bg-white">
+			<div class="container px-4 md:px-6">
+			  <div class="flex items-center gap-2 mb-6">
+				<Newspaper className="h-6 w-6" />
+				<h2 class="text-2xl font-bold">Latest News</h2>
+			  </div>
+			  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				{latestNews
+				.map((news, index) => (
+				  <div class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 h-full flex flex-col">
+					<h3 class="font-bold text-lg">{news.data.title}</h3>
+					<p class="text-sm text-gray-500 mb-2">{news.data.date.toDateString()}</p>
+					<p class="text-gray-600 flex-grow">{news.data.excerpt}</p>
+					<Link href={`/news/${news.id}`} variant="ghost" className="text-amber-600 text-sm inline-flex items-center mt-4">
+					  Read more <ArrowRight className="ml-1 h-3 w-3" />
+					</Link>
+				  </div>
+				))}
+			  </div>
+			  <div class="mt-6 flex justify-center">
+				  <Link  href="/news" variant="outline">View All News</Link>
+			  </div>
+			</div>
+		  </section> -->
+		  {/* Achievements */}
+		  <section class="w-full py-12 md:py-24 bg-gray-50">
+			<div class="container px-4 md:px-6">
+			  <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+				<div class="flex items-center gap-2">
+				  <Trophy className="h-6 w-6 text-yellow-500" />
+				  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">Our Achievements</h2>
+				</div>
+				<p class="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+				  Celebrating our successes and recognition in the field of robotics
+				</p>
+			  </div>
+			  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				{achievement.map((achievement, index) => (
+				  <div
+					/*key={index}*/
+					class="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 text-center hover:shadow-md transition-shadow"
+				  >
+					<div class="text-4xl mb-2">{achievement.data.icon}</div>
+					<h3 class="text-xl font-bold mb-1">{achievement.data.title2}</h3>
+					<p class="text-gray-700">{achievement.data.competition}</p>
+					<p class="text-gray-500">{achievement.data.date.toDateString()}</p>
+				  </div>
+				))}
+			  </div>
+			  <div class="flex justify-center mt-8">
+				  <Link variant="outline" href="/achievements">View All Achievements</Link>
+			  </div>
+			</div>
+		  </section>
+
+		  {/* publications */}
+		  <section class="w-full py-12 md:py-24 bg-white">
+			<div class="container px-4 md:px-6">
+			  <div class="flex flex-col items-center justify-center space-y-4 text-center mb-10">
+				<div class="flex items-center gap-2">
+				  <Calendar className="h-6 w-6 text-amber-600" />
+				  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">Publications</h2>
+				</div>
+				<p class="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+				  Publications Paper and Journal
+				</p>
+			  </div>
+			  <div class="relative border-l border-gray-200 ml-3 md:ml-6 pl-6 space-y-10">
+				{publication.map((publication, index) => (
+				  <div /*key={index}*/ class="relative">
+					<div class="absolute -left-10 mt-1.5 h-6 w-6 rounded-full border border-white bg-amber-600 flex items-center justify-center">
+					  <span class="text-white text-xs">{index + 1}</span>
+					</div>
+					<div class="p-4 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+					  <h3 class="text-xl font-bold">{publication.data.title}</h3>
+					  <div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 text-sm text-gray-500 mb-2">
+						<span class="flex items-center">
+						  <Calendar className="mr-1 h-4 w-4" /> {publication.data.date.toDateString()}
+						</span>
+						<span>{publication.data.location}</span>
+					  </div>
+					  <p class="text-gray-600">{publication.data.description}</p>
+					</div>
+				  </div>
+				))}
+			  </div>
+			  <div class="flex justify-center mt-8">
+				<Link variant="outline" href="/publications">View All Publications</Link>
+			</div>
+			</div>
+		  </section>
+
+		  {/* Team Members */}
+		  <TeamSection item={teamMembers} client:load />
+
+		  {/* Call to Action */}
+		  <section class="w-full py-12 md:py-24 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
+			<div class="container px-4 md:px-6">
+			  <div class="flex flex-col items-center justify-center space-y-4 text-center">
+				<div class="space-y-2">
+				  <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+					Our Robotics Community
+				  </h2>
+				  <p class="max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+					Whether you're a student, researcher, or industry professional, there are many ways to get involved
+				  </p>
+				</div>
+			  </div>
+			</div>
+		  </section>
+	</div>
+</Layout>

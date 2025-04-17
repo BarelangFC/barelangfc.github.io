@@ -1,0 +1,136 @@
+---
+import GitHub from "@/components/icons/GitHub.astro";
+import Gmail from "@/components/icons/Gmail.astro";
+import Instagram from "@/components/icons/Instagram.astro";
+import LinkedIn from "@/components/icons/LinkedIn.astro";
+import Youtube from "@/components/icons/Youtube.astro";
+import { Link } from "@/components/link";
+import ParticlesBackground from "@/components/ParticlesBackground.astro";
+import { PartnersSlider } from "@/components/partners-slider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { getCollection } from "astro:content";
+import {
+  BotIcon as Robot,
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  Phone,
+  MapPin,
+} from "lucide-react";
+
+const divisions = await getCollection("division");
+const href = "/divisions#";
+const contacts = await getCollection("contacts");
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="container px-4 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2">
+          <a href="/" class="flex items-center gap-2">
+            <img src="/BFCDEPAN.png" class="w-44 bg-amber-50 rounded-t-2xl" />
+          </a>
+        </div>
+        <p class="text-sm">
+          Advancing the field of robotics through innovation, education, and
+          collaboration.
+        </p>
+        <div class="flex space-x-4">
+          <Link
+            href="https://www.youtube.com/@barelangfc628"
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+          >
+            <Youtube class="h-4 w-4" />
+            <span class="sr-only">Email</span>
+          </Link>
+          <Link
+            href="https://instagram.com/barelangfc.polibatam?igshid=YmMyMTA2M2Y="
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+          >
+            <Instagram class="h-4 w-4" />
+            <span class="sr-only">Instagram</span>
+          </Link>
+          <Link
+            href="https://github.com/barelangfc"
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+          >
+            <GitHub class="h-4 w-4" />
+            <span class="sr-only">Github</span>
+          </Link>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-medium text-white mb-4">Quick as</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/robots" class="hover:text-white"> Robot </a>
+          </li>
+          <li>
+            <a href="/team" class="hover:text-white"> Team </a>
+          </li>
+          <li>
+            <a href="/publications" class="hover:text-white">
+              Publications
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-medium text-white mb-4">Divisions</h3>
+        <ul class="space-y-2 text-sm">
+          {
+            divisions.map((division, index) => (
+              <li>
+                <a href={href + division.data.id} class="hover:text-white">
+                  {division.data.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        {contacts.map((contact, index) => (
+        <h3 class="font-medium text-white mb-4">Contact Information</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center gap-2">
+            <Mail className="h-4 w-4" />
+            <span>{contact.data.email}</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Phone className="h-4 w-4" />
+            <span>{contact.data.phone}</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <MapPin className="h-4 w-4" />
+            <span>{contact.data.address.street}, {contact.data.address.city}</span>
+          </li>
+        </ul>
+        ))}
+      </div>
+    </div>
+    {/* Partners Section with sliding animation */}
+    <PartnersSlider />
+    <div
+      class="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-sm">
+        <a href="https://hasanfirdaus.com">&copy;</a> <a href="https://instagram.com/bimaadinirma">{new Date().getFullYear()}</a> <a href="https://barelangfc.github.io" class="text-amber-400 hover:text-amber-200">BarelangFC</a>. Made with <a href="https://Astro.build" class="text-amber-400 hover:text-amber-200">Astro</a>.
+      </p>
+      <div class="flex gap-4 mt-4 md:mt-0 text-sm">
+        <a href="/contact" class="text-amber-400 hover:text-amber-200">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

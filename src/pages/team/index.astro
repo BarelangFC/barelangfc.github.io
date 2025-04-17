@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import TeamPage from "@/components/team-page";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const teamMembers = await getCollection("teamMember");
+---
+
+<Layout>
+  <div class="container py-12 md:py-16">
+    {/* Team Members Grid */}
+    <TeamPage item={teamMembers} client:load />
+  </div>
+</Layout>

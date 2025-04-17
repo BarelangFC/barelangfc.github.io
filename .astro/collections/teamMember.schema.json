@@ -1,0 +1,153 @@
+{
+  "$ref": "#/definitions/teamMember",
+  "definitions": {
+    "teamMember": {
+      "type": "object",
+      "properties": {
+        "nim": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "angkatan": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "role": {
+          "type": "string"
+        },
+        "division": {
+          "type": "string"
+        },
+        "prodi": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "education": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "degree": {
+                "type": "string"
+              },
+              "institution": {
+                "type": "string"
+              },
+              "year": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "experience": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "position": {
+                "type": "string"
+              },
+              "company": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "projects": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "awards": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "organization": {
+                "type": "string"
+              },
+              "year": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "linkedin": {
+              "type": "string"
+            },
+            "instagram": {
+              "type": "string"
+            },
+            "github": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nim",
+        "name",
+        "angkatan",
+        "role",
+        "division",
+        "prodi",
+        "status",
+        "image",
+        "contact"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,129 @@
+{
+  "$ref": "#/definitions/achievement",
+  "definitions": {
+    "achievement": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "title2": {
+          "type": "string"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "date_end": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "competition": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "teamMember": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "not": {}
+              },
+              {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "collection"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "slug": {
+                        "type": "string"
+                      },
+                      "collection": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "slug",
+                      "collection"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "title2",
+        "date",
+        "date_end",
+        "competition",
+        "category",
+        "description",
+        "icon",
+        "img",
+        "teamMember"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

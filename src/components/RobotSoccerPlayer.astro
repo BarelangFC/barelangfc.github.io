@@ -1,0 +1,160 @@
+---
+// RobotSoccerPlayer.astro
+---
+
+<div id="robot-cursor" class="robot-cursor">
+    <img src="/ball.webp" alt="Soccer Robot" class="robot-image">
+  </div>
+  
+  <style>
+    /* Hide the default cursor on the entire page and all elements */
+    :global(body),
+    :global(a),
+    :global(button),
+    :global(input),
+    :global([role="button"]),
+    :global(select),
+    :global(label),
+    :global([onclick]),
+    :global(.clickable) {
+      cursor: none !important;
+    }
+    
+    /* Robot cursor styling */
+    .robot-cursor {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      z-index: 9999;
+      pointer-events: none; /* Important: allows clicking through the robot */
+      transform-origin: center bottom;
+      will-change: transform;
+      transition: transform 0.1s ease;
+    }
+  
+    .robot-image {
+      width: 50%;
+      height: 50%;
+      object-fit: contain;
+      transition: transform 0.1s ease;
+    }
+    
+    /* Add a subtle animation when clicking */
+    .robot-cursor.clicking {
+      transform: scale(0.9);
+    }
+    
+    /* Enlarge the robot when hovering over clickable elements */
+    .robot-cursor.hovering {
+      transform: scale(1.2);
+    }
+    
+    /* Spinning animation */
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .robot-cursor .robot-image.spinning {
+      animation: spin 0.8s linear infinite;
+    }
+    
+    /* Combined states */
+    .robot-cursor.hovering .robot-image.spinning {
+      animation: spin 0.8s linear infinite;
+    }
+    
+    .robot-cursor.clicking .robot-image.spinning {
+      animation: spin 0.8s linear infinite;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const robotCursor = document.getElementById('robot-cursor');
+      const robotImage = robotCursor?.querySelector('.robot-image');
+      
+      if (!robotCursor || !robotImage) return;
+      
+      let lastX = 0;
+      let lastY = 0;
+      let isMoving = false;
+      let moveTimeout: number | undefined;
+      
+      // Track cursor position and update robot position in real-time
+      document.addEventListener('mousemove', (e) => {
+        // Position the robot with its center bottom at the cursor point
+        robotCursor.style.left = `${e.clientX - 0}px`; // Half the width
+        robotCursor.style.top = `${e.clientY - 0}px`;  // Full height to position bottom at cursor
+        
+        // Check if hovering over a clickable element
+        const element = document.elementFromPoint(e.clientX, e.clientY);
+        const isClickable = element && (
+          element.tagName === 'A' || 
+          element.tagName === 'BUTTON' || 
+          element.tagName === 'INPUT' || 
+          element.tagName === 'SELECT' || 
+          element.tagName === 'LABEL' ||
+          element.hasAttribute('onclick') ||
+          element.getAttribute('role') === 'button' ||
+          element.classList.contains('clickable')
+        );
+        
+        if (isClickable) {
+          robotCursor.classList.add('hovering');
+        } else {
+          robotCursor.classList.remove('hovering');
+        }
+        
+        // Detect movement for spinning
+        const movementX = Math.abs(e.clientX - lastX);
+        const movementY = Math.abs(e.clientY - lastY);
+        
+        if (movementX > 5 || movementY > 5) {
+          // Significant movement detected
+          isMoving = true;
+          robotImage.classList.add('spinning');
+          
+          // Clear any existing timeout
+          if (moveTimeout) {
+            clearTimeout(moveTimeout);
+          }
+          
+          // Set timeout to stop spinning after movement stops
+          moveTimeout = setTimeout(() => {
+            isMoving = false;
+            robotImage.classList.remove('spinning');
+          }, 500);
+        }
+        
+        // Update last position
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+      
+      // Add click animation
+      document.addEventListener('mousedown', () => {
+        robotCursor.classList.add('clicking');
+      });
+      
+      document.addEventListener('mouseup', () => {
+        robotCursor.classList.remove('clicking');
+      });
+      
+      // Handle cursor at page load
+      const initialMouseEvent = new MouseEvent('mousemove', {
+        clientX: window.innerWidth / 2,
+        clientY: window.innerHeight / 2
+      });
+      document.dispatchEvent(initialMouseEvent);
+      
+      // Handle cursor when window is resized
+      window.addEventListener('resize', () => {
+        const resizeMouseEvent = new MouseEvent('mousemove', {
+          clientX: window.innerWidth / 2,
+          clientY: window.innerHeight / 2
+        });
+        document.dispatchEvent(resizeMouseEvent);
+      });
+    });
+  </script>

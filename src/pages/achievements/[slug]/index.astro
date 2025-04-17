@@ -1,0 +1,155 @@
+---
+import { Button } from "@/components/ui/button";
+import Layout from "../../../layouts/Layout.astro";
+import { ArrowRight, Calendar, ArrowLeft, Share2 } from "lucide-react";
+import { getCollection, getEntries, render } from "astro:content";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "@/components/link";
+import { Image } from "astro:assets";
+export async function getStaticPaths() {
+  const achievements = await getCollection("achievement");
+  return achievements.map((achievement) => ({
+    params: { slug: achievement.id },
+    props: { achievement },
+  }));
+}
+
+const { achievement } = Astro.props;
+if (!achievement) {
+  // Handle Error, for example:
+  throw new Error("Could not find album!");
+}
+const { data } = achievement;
+const { Content } = await render(achievement);
+const teams = await getEntries(achievement.data.teamMember.map((item) => item));
+const members = data.teamMember.map((item) => {
+  return teams.find((team) => team.id === item.id);
+});
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <div class="container py-12 md:py-16">
+    <Link
+      href="/achievements"
+      variant="ghost"
+      className="flex w-fit items-center mb-8"
+    >
+      <ArrowLeft className="mr-2 h-4 w-4" />
+      Back to Achievements
+    </Link>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <div class="mb-6">
+          <Badge variant="secondary" className="mb-2">
+            {data.category}
+          </Badge>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">{data.title}</h1>
+          <div class="flex items-center gap-4 text-gray-500">
+            <div class="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              <span>{data.date.toDateString()} - {data.date_end.toDateString()}</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span>{data.icon} {data.title2}</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-8"
+        >
+          <Image
+            src={data.img}
+            alt={data.title}
+            class="object-cover object-center w-full h-full"
+          />
+        </div>
+
+        <div class="prose prose-blue max-w-none"><Content /></div>
+
+        <div class="mt-8 pt-6 border-t">
+          <h2 class="text-2xl font-bold mb-4">Team Members</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {
+              members.map((member, index) =>
+                member ? (
+                  <div class="flex flex-col items-center text-center">
+                    <div class="relative w-20 h-20 rounded-full overflow-hidden mb-2">
+                      <img
+                        src={member.data.image}
+                        alt={member.data.name}
+                        class="object-cover bg-gray-200"
+                      />
+                    </div>
+                    <h3 class="font-semibold">{member.data.name}</h3>
+                    <p class="text-sm text-gray-500">{member.data.role}</p>
+                  </div>
+                ) : (
+                  <Fragment />
+                ),
+              )
+            }
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t">
+          <h2 class="text-2xl font-bold mb-4">Share This Achievement</h2>
+          <div class="flex gap-3">
+            <Button variant="outline" size="icon" className="rounded-full">
+              <Share2 className="h-4 w-4" />
+              <span class="sr-only">Share</span>
+            </Button>
+            {/* Add more share buttons for different platforms */}
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-1">
+        <div class="sticky top-24">
+          {
+            /*
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Related Achievements</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div class="space-y-4">
+                    {achievement.relatedAchievements.map((related, index) => (
+                      <div key={index} class="flex items-center gap-3">
+                        <Trophy class="h-8 w-8 text-blue-500" />
+                        <div>
+                          <a href={`/achievements/${related.slug}`} class="font-medium hover:text-blue-600">
+                            {related.title}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+              */
+          }
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle className="text-xl">More Achievements</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Link
+                href="/achievements"
+                variant="outline"
+                className="flex items-center justify-center w-full"
+              >
+                View All Achievements
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

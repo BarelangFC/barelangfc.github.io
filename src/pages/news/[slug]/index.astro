@@ -1,0 +1,160 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Calendar, ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getCollection, getEntries, render } from "astro:content";
+import { Link } from "@/components/link";
+import { Image } from "astro:assets";
+export async function getStaticPaths() {
+    const news = await getCollection("news");
+    return news.map((news) => ({
+        params: { slug: news.id },
+        props: { news },
+    }));
+}
+
+const { news } = Astro.props;
+if (!news) {
+    // Handle Error, for example:
+    throw new Error("Could not find album!");
+}
+const { data } = news;
+const news2 = await getCollection("news");
+news2.sort(function (a, b) {
+    return b.data.date.getTime() - a.data.date.getTime();
+});
+const latest = news2.slice(0, 4);
+const { Content } = await render(news);
+const relate = await getEntries(news.data.relatedArticles.map((item) => item));
+const related = data.relatedArticles.map((item) => {
+    return relate.find((relate) => relate.id === item.id);
+});
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <div class="container py-12 md:py-16">
+        <div class="mb-8">
+            <Link
+                href="/news"
+                variant="ghost"
+                className="flex w-fit items-center mb-8"
+            >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to News
+            </Link>
+
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <Badge
+                    variant="secondary"
+                    className="bg-blue-100 text-blue-800 hover:bg-blue-200"
+                >
+                    {data.category}
+                </Badge>
+                <span class="text-sm text-gray-500 flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {data.date.toDateString()}
+                </span>
+                <span class="text-sm text-gray-500">By {data.author}</span>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">{data.title}</h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div
+                    class="relative h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-8"
+                >
+                    <Image
+                        src={data.image || "/placeholder.svg"}
+                        alt={data.title}
+                        class="object-cover object-center h-full"
+                        priority
+                    />
+                </div>
+
+                <div class="prose prose-blue max-w-none"><Content /></div>
+            </div>
+
+            <div>
+                <div class="sticky top-24">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle className="text-xl"
+                                >Related News</CardTitle
+                            >
+                        </CardHeader>
+                        <CardContent>
+                            <div class="space-y-4">
+                                {
+                                    related.map((related, index) =>
+                                        related ? (
+                                            <div class="flex gap-3">
+                                                <div class="relative h-16 w-16 flex-shrink-0 rounded-md overflow-hidden">
+                                                    <Image
+                                                        src={
+                                                            related.data
+                                                                .image ||
+                                                            "/placeholder.svg"
+                                                        }
+                                                        alt={related.data.title}
+                                                        class="object-cover object-center w-full h-full"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-medium line-clamp-2">
+                                                        <a
+                                                            href={`/news/${related.id}`}
+                                                            class="hover:text-amber-600"
+                                                        >
+                                                            {related.data.title}
+                                                        </a>
+                                                    </h4>
+                                                    <p class="text-sm text-gray-500">
+                                                        {related.data.date.toDateString()}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <Fragment />
+                                        ),
+                                    )
+                                }
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="mt-6">
+                        <CardHeader>
+                            <CardTitle className="text-xl"
+                                >Latest News</CardTitle
+                            >
+                        </CardHeader>
+                        <CardContent>
+                            <div class="space-y-2">
+                                {
+                                    latest.map((article, id) => (
+                                        <a
+                                            href={`/news/${article.id}`}
+                                            class="block text-amber-600 hover:underline"
+                                        >
+                                            {article.data.title}
+                                        </a>
+                                    ))
+                                }
+                            </div>
+                            <Link
+                                variant="outline"
+                                className="w-full mt-4"
+                                href="/news">View All News</Link
+                            >
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,27 @@
+---
+import RobotSoccerPlayer from "@/components/RobotSoccerPlayer.astro";
+import "../assets/global.css";
+import Footer from "./Footer.astro";
+import Header from "./Header.astro";
+// Supports weights 100-900
+import "@fontsource-variable/inter";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/BFC.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>BarelangFC - Site</title>
+	</head>
+	<body>
+		<div class="flex flex-col min-h-screen">
+			<Header />
+			<RobotSoccerPlayer />
+			<main class="flex-1"><slot /></main>
+			<Footer />
+		</div>
+	</body>
+</html>

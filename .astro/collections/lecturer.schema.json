@@ -1,0 +1,67 @@
+{
+  "$ref": "#/definitions/lecturer",
+  "definitions": {
+    "lecturer": {
+      "type": "object",
+      "properties": {
+        "nik": {
+          "type": "number"
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "specialization": {
+          "type": "string"
+        },
+        "isGuardianLecturer": {
+          "type": "boolean"
+        },
+        "photo": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "linkedin": {
+              "type": "string"
+            },
+            "instagram": {
+              "type": "string"
+            },
+            "github": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nik",
+        "code",
+        "name",
+        "role",
+        "status",
+        "specialization",
+        "photo",
+        "contact"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

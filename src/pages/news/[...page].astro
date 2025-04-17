@@ -1,0 +1,179 @@
+---
+import { Card, CardTitle } from "@/components/ui/card";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, ArrowRight } from "lucide-react";
+import { Link } from "@/components/link";
+// Define page size
+interface Page {
+    currentPage: number;
+    lastPage: number;
+    data: any[];
+    total: number;
+}
+// Create paginated data
+export async function getStaticPaths({ paginate }: any) {
+    const allNews = await getCollection("news");
+    const sortedNews = allNews.sort((a, b) => {
+        return (
+            new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+        );
+    });
+
+    return paginate(sortedNews, { pageSize: 6 });
+}
+
+// Get the paginated data for the current page
+const { page } = Astro.props as {
+    page: Page;
+};
+const start = (page.currentPage - 1) * 1 + 1;
+const end = Math.min(start + page.data.length - 1, page.total);
+---
+
+<Layout>
+    <div class="container py-12 md:py-16">
+        <div class="space-y-4 text-center mb-10">
+            <h1 class="text-4xl font-bold">News</h1>
+            <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+                Stay updated with the latest happenings, achievements, and
+                announcements from our robotics organization
+            </p>
+        </div>
+
+        {/* All News */}
+        <div>
+            <h2 class="text-2xl font-bold mb-6">All News</h2>
+            <div class="space-y-6">
+                {
+                    page.data.map((article, id) => (
+                        <Card key={id} className="overflow-hidden py-0">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="relative h-48 md:h-auto md:w-1/3 lg:w-1/4">
+                                    <Image
+                                        src={
+                                            article.data.image ||
+                                            "/placeholder.svg"
+                                        }
+                                        alt={article.data.title}
+                                        class="object-cover h-60 w-full"
+                                    />
+                                </div>
+                                <div class="flex flex-col p-6 md:w-2/3 lg:w-3/4">
+                                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                                        <Badge
+                                            variant="secondary"
+                                            className="bg-blue-100 text-blue-800 hover:bg-blue-200"
+                                        >
+                                            {article.data.category}
+                                        </Badge>
+                                        <span class="text-sm text-gray-500 flex items-center gap-1">
+                                            <Calendar className="h-4 w-4" />
+                                            {article.data.date.toDateString()}
+                                        </span>
+                                    </div>
+                                    <CardTitle className="mb-2 text-2xl">
+                                        {article.data.title}
+                                    </CardTitle>
+                                    <p class="text-gray-600 mb-4 line-clamp-2 md:line-clamp-3">
+                                        {article.data.excerpt}
+                                    </p>
+                                    <div class="mt-auto">
+                                        <Link
+                                            variant="outline"
+                                            size="sm"
+                                            href={`/news/${article.id}`}
+                                            className="inline-flex items-center"
+                                        >
+                                            Read Full Article{" "}
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </Card>
+                    ))
+                }
+            </div>
+
+            {/* Pagination */}
+            <div class="flex justify-center mt-10">
+                <nav class="flex items-center gap-1">
+                    <Link
+                        variant="outline"
+                        size="icon"
+                        disabled={page.currentPage === 1}
+                        href={`/news${page.currentPage > 1 ? (page.currentPage === 2 ? "" : `/page/${page.currentPage - 1}`) : ""}`}
+                        className="inline-flex items-center"
+                    >
+                        <span class="sr-only">Previous page</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            class="h-4 w-4"
+                        >
+                            <path d="m15 18-6-6 6-6"></path>
+                        </svg>
+                    </Link>
+
+                    {
+                        Array.from(
+                            { length: page.lastPage },
+                            (_, i) => i + 1,
+                        ).map((pageNum) => (
+                            <a
+                                href={
+                                    pageNum === 1 ? "/news" : `/news/${pageNum}`
+                                }
+                            >
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className={
+                                        pageNum === page.currentPage
+                                            ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                                            : ""
+                                    }
+                                >
+                                    {pageNum}
+                                </Button>
+                            </a>
+                        ))
+                    }
+
+                    <Link
+                        variant="outline"
+                        size="icon"
+                        disabled={page.currentPage === page.lastPage}
+                        href={`/news${page.currentPage < page.lastPage ? (page.currentPage + 1 === 1 ? "" : `/${page.currentPage + 1}`) : ""}`}
+                        className="inline-flex items-center"
+                    >
+                        <span class="sr-only">Next page</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            class="h-4 w-4"
+                        >
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </Link>
+                </nav>
+            </div>
+
+            <div class="text-center text-sm text-gray-500 mt-4">
+                Showing {start} to {end} of {page.total} articles
+            </div>
+        </div>
+    </div>
+</Layout>

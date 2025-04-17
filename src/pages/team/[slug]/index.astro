@@ -1,0 +1,134 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { ArrowLeft } from "lucide-react";
+import TeamMemberPage from "@/components/team-member-page";
+import { getCollection, render } from "astro:content";
+import { Badge } from "@/components/ui/badge";
+import Gmail from "@/components/icons/Gmail.astro";
+import { Link } from "@/components/link";
+import LinkedIn from "@/components/icons/LinkedIn.astro";
+import Instagram from "@/components/icons/Instagram.astro";
+import GitHub from "@/components/icons/GitHub.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export async function getStaticPaths() {
+    const teamMembers = await getCollection("teamMember");
+    return teamMembers.map((teamMember) => ({
+        params: { slug: teamMember.id },
+        props: { teamMember },
+    }));
+}
+
+const { teamMember } = Astro.props;
+if (!teamMember) {
+    // Handle Error, for example:
+    throw new Error("Could not find album!");
+}
+const { data } = teamMember;
+const { Content } = await render(teamMember);
+---
+
+<Layout>
+    <div class="container py-12 md:py-16">
+        <Link
+            href="/team"
+            variant="ghost"
+            className="flex w-fit items-center mb-8"
+        >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Team
+        </Link>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-1">
+                <div class="sticky top-24">
+                    <div
+                        class="relative aspect-square rounded-lg overflow-hidden mb-6"
+                    >
+                        <img
+                            src={data.image}
+                            alt={data.name}
+                            class="object-cover w-full h-full bg-gray-200"
+                        />
+                    </div>
+                    <h1 class="text-3xl font-bold mb-2">{data.name}</h1>
+                    <p class="text-xl text-black-500 mb-2">{data.nim}</p>
+                    <p class="text-xl text-amber-500 mb-2">{data.prodi}</p>
+                    <p class="text-xl text-gray-500 mb-2">{data.role}</p>
+                    <Badge
+                        variant="secondary"
+                        className="mb-3 font-bold text-s"
+                    >
+                        {data.division.toString()}
+                    </Badge>
+                    <p class="text-gray-600 mb-6">{data.bio}</p>
+                    <div class="flex space-x-2">
+                        {
+                            data.contact.email ? (
+                                <Link
+                                    href={data.contact.email!}
+                                    variant="outline"
+                                    size="icon"
+                                    className="h-8 w-8"
+                                >
+                                    <Gmail class="h-4 w-4" />
+                                    <span class="sr-only">Email</span>
+                                </Link>
+                            ) : (
+                                <Fragment />
+                            )
+                        }
+                        {
+                            data.contact.linkedin ? (
+                                <Link
+                                    href={data.contact.linkedin}
+                                    variant="outline"
+                                    size="icon"
+                                    className="h-8 w-8"
+                                >
+                                    <LinkedIn class="h-4 w-4" />
+                                    <span class="sr-only">LinkedIn</span>
+                                </Link>
+                            ) : (
+                                <Fragment />
+                            )
+                        }
+                        {
+                            data.contact.instagram ? (
+                                <Link
+                                    href={data.contact.instagram}
+                                    variant="outline"
+                                    size="icon"
+                                    className="h-8 w-8"
+                                >
+                                    <Instagram class="h-4 w-4" />
+                                    <span class="sr-only">Instagram</span>
+                                </Link>
+                            ) : (
+                                <Fragment />
+                            )
+                        }
+                        {
+                            data.contact.github ? (
+                                <Link
+                                    href={data.contact.github}
+                                    variant="outline"
+                                    size="icon"
+                                    className="h-8 w-8"
+                                >
+                                    <GitHub class="h-4 w-4" />
+                                    <span class="sr-only">Github</span>
+                                </Link>
+                            ) : (
+                                <Fragment />
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+            <TeamMemberPage item={teamMember} client:load />
+            <div class="md:col-span-2"></div>
+        </div>
+    </div>
+</Layout>

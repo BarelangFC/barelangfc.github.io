@@ -1,0 +1,155 @@
+---
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import {
+    Mail,
+    Phone,
+    MapPin,
+    Clock,
+} from "lucide-react";
+const contacts = await getCollection("contacts");
+---
+
+<Layout>
+    <div class="container py-12 md:py-16">
+        <div class="space-y-4 text-center mb-10">
+            <h1 class="text-4xl font-bold">Contact Us</h1>
+            <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+                Get in touch with our team for inquiries, collaborations, or to
+                learn more about our robotics organization
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            {/* Contact Information */}
+            <Card className="mb-8">
+                <CardHeader>
+                    <CardTitle className="text-2xl"
+                        >Contact Information</CardTitle
+                    >
+                    <CardDescription
+                        >Here's how you can reach us directly</CardDescription
+                    >
+                </CardHeader>
+                <CardContent className="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                            <Mail className="h-6 w-6" />
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Email</h3>
+                            {
+                                contacts.map((contacts, index) => (
+                                    <p class="text-gray-600">
+                                        {contacts.data.email}
+                                    </p>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                            <Phone className="h-6 w-6" />
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Phone</h3>
+                            {
+                                contacts.map((contacts, index) => (
+                                    <p class="text-gray-600">
+                                        {contacts.data.phone}
+                                    </p>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                            <MapPin className="h-6 w-6" />
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Address</h3>
+                            {
+                                contacts.map((contacts, index) => (
+                                    <p class="text-gray-600">
+                                        {contacts.data.address.street}
+                                    </p>
+                                    <p class="text-gray-600">
+                                        {contacts.data.address.city}
+                                    </p>
+                                    <p class="text-gray-600">
+                                        {contacts.data.address.province}, { contacts.data.address.postalCode}
+                                    </p>
+                                    <p class="text-gray-600">
+                                        {contacts.data.address.country}
+                                    </p>
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600">
+                            <Clock className="h-6 w-6" />
+                        </div>
+                        <div>
+                            <h3 class="font-medium">Hours of Operation</h3>
+                            {
+                                contacts.map((contact, index) => (
+                                    <Fragment key={index}>
+                                        {Array.isArray(contact.data.operations) ? (
+                                            contact.data.operations.map((line, i) => (
+                                                <p class="text-gray-600">{line}</p>
+                                            ))
+                                        ) : (
+                                            <p class="text-gray-600">{contact.data.operations}</p>
+                                        )}
+                                    </Fragment>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            <Card className="mb-8">
+                <CardHeader>
+                    <CardTitle className="text-2xl">Visit Us</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div
+                        class="relative h-[200px] w-full rounded-lg overflow-hidden"
+                    >
+                    {
+                                contacts.map((contact, index) => (
+                        <iframe
+                            src={contact.data.maps}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="absolute inset-0 w-full h-full"></iframe>
+                    ))}
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600">
+                            Our facility is located in the heart of the Tech
+                            District, easily accessible by public transportation
+                            and with ample parking available.
+                        </p>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    </div>
+</Layout>

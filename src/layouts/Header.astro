@@ -1,0 +1,55 @@
+---
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "../components/ui/button";
+import { Menu } from "lucide-react";
+import MobileMenu from "@/components/mobile-menu";
+import { Link } from "@/components/link";
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Robots", href: "/robots" },
+  { name: "Divisions", href: "/divisions" },
+  { name: "Teams", href: "/team" },
+  { name: "Albums", href: "/albums" },
+  { name: "Achievements", href: "/achievements" },
+  { name: "Publications", href: "/publications" },
+];
+const pathname = Astro.url.pathname;
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <div class="container flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <img src="/BFCDEPAN.png" class="w-44" />
+    </a>
+    <nav class="hidden md:flex gap-6">
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class={`text-sm font-medium transition-colors hover:text-amber-600 ${
+              (
+                item.href == "/"
+                  ? pathname === item.href
+                  : pathname.startsWith(item.href)
+              )
+                ? "text-amber-600"
+                : "text-muted-foreground"
+            }`}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-4">
+      <Link
+        href="/contact"
+        className="hidden md:flex bg-amber-600 hover:bg-amber-500"
+        >Contact Us</Link
+      >
+      <MobileMenu client:load />
+    </div>
+  </div>
+</header>

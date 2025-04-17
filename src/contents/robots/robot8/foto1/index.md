@@ -1,0 +1,7 @@
+---
+name: "Robot 1"
+description: "My Name is Arga"
+date: 2023-01-01
+image: "/robot1.jpg"
+status: "Old"
+---

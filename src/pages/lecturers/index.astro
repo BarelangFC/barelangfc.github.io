@@ -1,0 +1,199 @@
+---
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "@/components/link";
+import Gmail from "@/components/icons/Gmail.astro";
+import LinkedIn from "@/components/icons/LinkedIn.astro";
+import Instagram from "@/components/icons/Instagram.astro";
+import GitHub from "@/components/icons/GitHub.astro";
+
+const lecturers = await getCollection("lecturer");
+lecturers.sort((a, b) =>
+    a.data.isGuardianLecturer === b.data.isGuardianLecturer
+        ? 0
+        : a.data.isGuardianLecturer
+          ? -1
+          : 1,
+);
+
+const subjects = await getCollection("subject");
+---
+
+<Layout>
+    <div class="container py-0 w-4xl">
+        <div
+            class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+        >
+            <h1
+                class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary"
+            >
+                Our Lecturers
+            </h1>
+            <p class="mx-auto max-w-[700px] text-muted-foreground">
+                Meet the dedicated lecturers who guide BarelangFC
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {
+                lecturers.map(({ id, data }) => {
+                    const currentSubjects = subjects.filter(
+                        (item) =>
+                            item.data.theory.id === id ||
+                            item.data.practice?.id === id,
+                    );
+                    return (
+                        <Card className="overflow-hidden shadow-none py-0">
+                            <div class="flex justify-center py-0">
+                                <div class="relative aspect-square overflow-hidden">
+                                    <Image
+                                        src={data.photo}
+                                        alt={data.name}
+                                        class="object-cover w-full h-full"
+                                    />
+                                    <div class="absolute top-2 right-2">
+                                        <span
+                                            class={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                                                data.status === "Active" ? "bg-green-100 text-green-800" : "bg-blue-100 text-red-800"
+                                            }`}
+                                            >
+                                            {data.status}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <CardHeader className="text-center">
+                                <CardTitle className="text-primary text-lg">
+                                    {data.name}
+                                </CardTitle>
+                                <div class="text-center">
+                                    <p class="text-2sm font-medium text-amber-600">
+                                        {data.role}
+                                    </p>
+                                    <Badge variant="secondary">
+                                        NIDN: {data.nik}
+                                    </Badge>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="space-y-4">
+                                <div>
+                                    <p class="text-sm font-medium">
+                                        Specialization:
+                                    </p>
+                                    <p class="text-sm text-muted-foreground mt-1">
+                                        {data.specialization}
+                                    </p>
+                                </div>
+                                {currentSubjects &&
+                                currentSubjects.length > 0 ? (
+                                    <div class="space-y-1">
+                                        <p class="text-sm font-medium">
+                                            Subjects:
+                                        </p>
+                                        {currentSubjects.map(
+                                            ({ data: subject }) => {
+                                                const isTheory =
+                                                    subject.theory.id === id;
+                                                const isPractice =
+                                                    subject.practice?.id === id;
+
+                                                return (
+                                                    <div class="text-sm text-muted-foreground flex gap-4">
+                                                        <span class="font-bold font-mono">
+                                                            {subject.code}
+                                                        </span>
+                                                        <span>
+                                                            {subject.title}(
+                                                            {isTheory &&
+                                                            isPractice
+                                                                ? "Teori & Praktikum"
+                                                                : isTheory
+                                                                  ? "Teori"
+                                                                  : "Praktikum"}
+                                                            )
+                                                        </span>
+                                                    </div>
+                                                );
+                                            },
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Fragment />
+                                )}
+                            </CardContent>
+                            <CardFooter className="p-4 pt-0 flex justify-between">
+                                <div class="flex space-x-2">
+                                    {data.contact.email ? (
+                                        <Link
+                                            href={data.contact.email!}
+                                            variant="ghost"
+                                            size="icon"
+                                            className="h-8 w-8"
+                                        >
+                                            <Gmail class="h-4 w-4" />
+                                            <span class="sr-only">Email</span>
+                                        </Link>
+                                    ) : (
+                                        <div />
+                                    )}
+                                    {data.contact.linkedin ? (
+                                        <Link
+                                            href={data.contact.linkedin}
+                                            variant="ghost"
+                                            size="icon"
+                                            className="h-8 w-8"
+                                        >
+                                            <LinkedIn class="h-4 w-4" />
+                                            <span class="sr-only">
+                                                LinkedIn
+                                            </span>
+                                        </Link>
+                                    ) : (
+                                        <div />
+                                    )}
+                                    {data.contact.instagram ? (
+                                        <Link
+                                            href={data.contact.instagram}
+                                            variant="ghost"
+                                            size="icon"
+                                            className="h-8 w-8"
+                                        >
+                                            <Instagram class="h-4 w-4" />
+                                            <span class="sr-only">
+                                                Instagram
+                                            </span>
+                                        </Link>
+                                    ) : (
+                                        <div />
+                                    )}
+                                    {data.contact.github ? (
+                                        <Link
+                                            href={data.contact.github}
+                                            variant="ghost"
+                                            size="icon"
+                                            className="h-8 w-8"
+                                        >
+                                            <GitHub class="h-4 w-4" />
+                                            <span class="sr-only">Github</span>
+                                        </Link>
+                                    ) : (
+                                        <div />
+                                    )}
+                                </div>
+                            </CardFooter>
+                        </Card>
+                    );
+                })
+            }
+        </div>
+    </div>
+</Layout>
