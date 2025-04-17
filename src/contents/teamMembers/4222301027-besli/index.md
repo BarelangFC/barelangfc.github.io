@@ -5,7 +5,7 @@ role: "Member"
 angkatan: 2024-01-02
 division: "Programming"
 prodi: "Teknik Robotika"
-bio: "Siap, Santai Aja"
+bio: "ORA ET LABORA"
 status: "Active"
 image: "/besli.png"
 education: 

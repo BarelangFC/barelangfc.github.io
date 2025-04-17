@@ -7,6 +7,25 @@
   </div>
   
   <style>
+    /* Hide the robot cursor on mobile devices using CSS media query */
+  @media (max-width: 768px) {
+    .robot-cursor {
+      display: none !important;
+    }
+    
+    /* Restore default cursor on mobile */
+    :global(body),
+    :global(a),
+    :global(button),
+    :global(input),
+    :global([role="button"]),
+    :global(select),
+    :global(label),
+    :global([onclick]),
+    :global(.clickable) {
+      cursor: auto !important;
+    }
+  }
     /* Hide the default cursor on the entire page and all elements */
     :global(body),
     :global(a),
