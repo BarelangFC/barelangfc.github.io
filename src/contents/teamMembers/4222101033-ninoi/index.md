@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:andi.ninoi15@gmail.com"
+    linkedin: "https://www.linkedin.com/in/andi-ninoi-kazuyuki-darusman-98412a222/"
+    instagram: "https://www.instagram.com/ninoi_kazuyuki"
+    github: "https://github.com/NinoiKazuyuki"
 ---

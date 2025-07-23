@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:rayhangunawan102@gmail.com"
+    linkedin: "https://www.linkedin.com/in/rayhan-gunawan/"
+    instagram: "https://www.instagram.com/ryhn.gn/"
+    github: "https://github.com/RayhanGunawan"
 ---

@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:sentasitumorang53@gmail.com"
+    linkedin: "https://www.linkedin.com/in/"
+    instagram: "https://www.instagram.com/sentafito_/"
+    github: "https://github.com/SentaFito53"
 ---

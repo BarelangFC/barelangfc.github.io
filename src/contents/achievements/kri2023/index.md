@@ -7,9 +7,10 @@ competition: "Kontes Robot Indonesia 2024"
 category: "Competition"
 description: "Barelang FC Team from Batam State Polytechnic secured 1st place at the 2023 Indonesian Robot Contest (KRI) in Semarang, demonstrating Indonesia’s excellence in robotics innovation and robot soccer competition."
 icon: "🥉"
-img: ./kri2024.jpg
+img: ./kri2023.jpg
 teamMember: 
     - 4211901044-iman
+    - 4221901046-salman
     - 4222001029-bgfikri
     - 4212101033-leo
     - 4212101087-adimas
@@ -45,3 +46,6 @@ The Expert Staff of the Minister of Education, Culture, Research, and Technology
 <br/>
 <br/>
 #Polibatam #HumasPolibatam #PrestasiTimRobotPolibatam #BRAIL #KampusPBL #KRI2023
+<br/>
+<br/>
+[source : (https://www.instagram.com/p/Ct_dADfpjHz/?img_index=1)]

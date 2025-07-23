@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:tambacharliework@gmail.com"
+    linkedin: "https://www.linkedin.com/in/charlierolando/"
+    instagram: "https://www.instagram.com/charlierolando/"
+    github: "https://github.com/charlierolando"
 ---

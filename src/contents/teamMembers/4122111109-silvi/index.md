@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:nurmiatisilvia@gmail.com"
+    linkedin: "https://www.linkedin.com/in/silvia-nurmiati-951678202/"
+    instagram: "https://www.instagram.com/silvianurmiati"
+    github: "https://github.com/Silvia-14"
 ---

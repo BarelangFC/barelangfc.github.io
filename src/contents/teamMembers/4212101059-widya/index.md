@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:widyayusurya@outlook.com"
+    linkedin: "http://linkedin.com/in/wdyaayu/"
+    instagram: "https://www.instagram.com/wdyaaaptri/"
+    github: "https://github.com/wdyaaayu"
 ---

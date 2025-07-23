@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:aryaniyenn99@gmail.com"
+    linkedin: "https://www.linkedin.com/in/yeni-aryani-934708286/"
+    instagram: "https://www.instagram.com/aryani.yen"
+    github: "https://github.com/yeniaryani"
 ---

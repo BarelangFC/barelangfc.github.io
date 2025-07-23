@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:juitasari3725@gmail.com"
+    linkedin: "https://www.linkedin.com/in/juita-sari-826b92312/"
+    instagram: "https://www.instagram.com/mysaturn.era/"
+    github: "https://github.com/Juita1945"
 ---

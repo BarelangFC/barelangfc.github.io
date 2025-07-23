@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:prettyparathnyaangli@gmail.com"
+    linkedin: "https://www.linkedin.com/in/pretty-parathnya-a-068a26314/"
+    instagram: "http://instagram.com/pritilabs"
+    github: "https://github.com/pritilabs"
 ---

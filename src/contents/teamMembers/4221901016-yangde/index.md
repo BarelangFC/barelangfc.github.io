@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:delila.salsabila459@gmail.com"
+    linkedin: "https://www.linkedin.com/in/yang-delila-salsabila/"
+    instagram: "https://www.instagram.com/imyede/"
+    github: "https://github.com/"
 ---

@@ -14,5 +14,5 @@ technologies:
   - "Sensor Integration"
   - "Embedded Systems"
   - "Real-time Data Processing"
-image: ./1.jpg
+image: ./FotoTeam.png
 ---

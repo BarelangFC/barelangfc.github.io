@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:adimasariefrahman@gmail.com"
+    linkedin: "https://www.linkedin.com/in/adimas-ariefrahman/"
+    instagram: "https://www.instagram.com/adimmm235"
+    github: "https://github.com/AdimasBarelang"
 ---

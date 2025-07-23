@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:bintangevanss18@gmail.com"
+    linkedin: "https://www.linkedin.com/in/bintang-bintang-56986328b"
+    instagram: "https://www.instagram.com/bnntngg_"
+    github: "https://github.com/"
 ---

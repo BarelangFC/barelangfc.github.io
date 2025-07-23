@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:Fahmifadilah2002@gmail.com"
+    linkedin: "https://www.linkedin.com/in/fahmi-fadillah-b74290258/"
+    instagram: "https://www.instagram.com/sih_joo"
+    github: "https://github.com/fahmifadillah12"
 ---

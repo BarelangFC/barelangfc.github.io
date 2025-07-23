@@ -29,8 +29,8 @@ awards:
     year: "2024"
 
 contact:
-    email: "mailto:jrerwandi@gmail.com"
-    linkedin: "https://www.linkedin.com/in/jr-erwandi"
-    instagram: "https://www.instagram.com/jr.erwandi"
-    github: "https://github.com/jrerwandi"
+    email: "mailto:Diputra184@gmail.com"
+    linkedin: "https://id.linkedin.com/in/irga-julian-diputra-9089a7194/"
+    instagram: "https://www.instagram.com/irgadiputra"
+    github: "https://github.com/irgadiputra"
 ---

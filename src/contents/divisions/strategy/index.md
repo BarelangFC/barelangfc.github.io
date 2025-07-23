@@ -14,5 +14,5 @@ technologies:
   - "Path Planning Algorithms"
   - "Sensor Fusion"
   - "Computer Vision"
-image: ./5.jpg
+image: ./FotoTeam.png
 ---

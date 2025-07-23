@@ -53,8 +53,8 @@ awards:
     year: "2024"
 
 contact:
-    email: "mailto:emily.chen@roboorg.com"
-    linkedin: "https://www.linkedin.com/in/emilychen"
-    instagram: "@EmilyRobotics"
-    github: "https://github.com/emilychen"
+    email: "mailto:aagraprana@gmail.com"
+    linkedin: "https://www.linkedin.com/in/i-putu-angga-hanira-agraprana-7612052ba/"
+    instagram: "https://www.instagram.com/ipt.angga/"
+    github: "https://github.com/PutAngga"
 ---

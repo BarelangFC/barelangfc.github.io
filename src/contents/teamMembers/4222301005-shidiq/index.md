@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:Shidiqeka13@gmail.com"
+    linkedin: "https://www.linkedin.com/in/abdullah-shidiq-eka-putra-15a0952a9/"
+    instagram: "https://www.instagram.com/shidiq.ep/"
+    github: "https://github.com/shidiqeka"
 ---

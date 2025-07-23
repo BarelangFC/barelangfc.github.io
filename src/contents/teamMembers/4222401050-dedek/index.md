@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:dedekmbussines@gmail.com"
+    linkedin: "https://www.linkedin.com/in/dedek-mulyadi-35b69b286/"
+    instagram: "https://www.instagram.com/dedeekm/"
+    github: "https://github.com/Dedekm01"
 ---

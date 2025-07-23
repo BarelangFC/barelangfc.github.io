@@ -9,6 +9,8 @@ description: "Barelang FC Team from Batam State Polytechnic is the only Indonesi
 icon: "🥉"
 img: ./robocop2023.jpg
 teamMember: 
+    - 4211901044-iman
+    - 4221901046-salman
     - 4222001029-bgfikri
     - 4222001005-yeni
     - 4222101033-ninoi

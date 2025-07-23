@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:Elfander.123@gmail.com"
+    linkedin: "https://id.linkedin.com/in/m-wahyu-elfander/"
+    instagram: "https://www.instagram.com/_elfander_"
+    github: "https://github.com/elfander"
 ---

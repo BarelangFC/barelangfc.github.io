@@ -29,8 +29,8 @@ awards:
 
 
 contact:
-    email: "mailto:emily.chen@roboorg.com"
-    linkedin: "https://www.linkedin.com/in/emilychen"
-    instagram: "@EmilyRobotics"
-    github: "https://github.com/emilychen"
+    email: "mailto:fikrialbadawi@gmail.com"
+    linkedin: "www.linkedin.com/in/muhammad-fikri-stkanno1903/"
+    instagram: "https://www.instagram.com/bungfikriii"
+    github: "https://github.com/MuhammadFikri1903"
 ---

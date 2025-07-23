@@ -30,7 +30,7 @@ awards:
 
 contact:
     email: "mailto:emily.chen@roboorg.com"
-    linkedin: "https://www.linkedin.com/in/emilychen"
-    instagram: "@EmilyRobotics"
-    github: "https://github.com/emilychen"
+    linkedin: "https://www.linkedin.com/in/muhammad-rezky-fatya-1458b9375/"
+    instagram: "https://www.instagram.com/rezky_ftya.04/"
+    github: "https://github.com/"
 ---

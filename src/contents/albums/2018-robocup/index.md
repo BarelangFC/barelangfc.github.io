@@ -2,7 +2,7 @@
 title: Robocup 2018
 date: 2018-06-18
 date_end: 2018-06-22
-location: Canada
+location: Montreal, Canada
 cover: ./cover.jpg
 contents:
   - ./1.JPG
@@ -27,4 +27,4 @@ contents:
 
 ---
 
-RoboCup 2018 in Canada.
+RoboCup 2018 in Montreal, Canada.

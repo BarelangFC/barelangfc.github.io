@@ -14,7 +14,7 @@ education:
     year: "2023 - Present"
 
   - degree: "SMK - Jurusan Mekatronika"
-    institution: "SMKN 1 Batam"
+    institution: "SMKN 3 Batam"
     year: "2019-2023"
 
 experience:
@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:nicobreygin23@gmail.com"
+    linkedin: "https://www.linkedin.com/in/nico-breygin-672284249/"
+    instagram: "https://www.instagram.com/nico.brygn"
+    github: "https://github.com/"
 ---

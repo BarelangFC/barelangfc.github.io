@@ -26,8 +26,8 @@ const divisions = await getCollection("division");
               class={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
             >
             <div class={`order-2 ${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}>
-                    <div class="h-80 rounded-xl overflow-hidden w-fit">
-                    <Image src={division.data.image} alt={division.data.name} /*fill*/ class="object-cover h-full" />
+                    <div class="rounded-xl overflow-hidden w-full max-w-2xl mx-auto">
+                    <Image src={division.data.image} alt={division.data.name} /*fill*/ class="w-full h-auto object-contain" />
                     </div>
                 </div>
                 <div class={`order-1 ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}>

@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
+    email: "mailto:donarufi01@gmail.com"
+    linkedin: "https://www.linkedin.com/in/wasdonialfi/"
+    instagram: "https://www.instagram.com/don_arufi01"
     github: "https://github.com/zakyaskarsonia"
 ---

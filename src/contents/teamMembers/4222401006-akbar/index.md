@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:muhammadakbariqvi@gmail.com"
+    linkedin: "https://www.linkedin.com/in/muhammad-akbar-iqvi-115989355/"
+    instagram: "https://www.instagram.com/akbar_iqvi/"
+    github: "https://github.com/AkbarL090"
 ---

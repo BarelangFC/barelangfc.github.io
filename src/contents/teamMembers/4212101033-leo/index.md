@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:leo.chandra.y@gmail.com"
+    linkedin: "https://www.linkedin.com/in/"
+    instagram: "https://www.instagram.com/leochand__"
+    github: "https://github.com/"
 ---

@@ -54,8 +54,8 @@ awards:
 
 
 contact:
-    email: "mailto:zakyaskarsonia@gmail.com"
-    linkedin: "https://www.linkedin.com/in/zakyaskarsonia/"
-    instagram: "https://www.instagram.com/zakyaskrsn/"
-    github: "https://github.com/zakyaskarsonia"
+    email: "mailto:kaylanadine818@gmail.com"
+    linkedin: "https://www.linkedin.com/in/"
+    instagram: "https://www.instagram.com/kayla_nh0112/"
+    github: "https://github.com/kaylanadineh"
 ---
