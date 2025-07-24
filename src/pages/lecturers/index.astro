@@ -29,7 +29,7 @@ const subjects = await getCollection("subject");
 ---
 
 <Layout>
-    <div class="container py-12 w-4xl">
+    <div class="container py-12 w-full max-w-full sm:w-4xl sm:max-w-4xl">
         <div
             class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
         >
@@ -43,7 +43,7 @@ const subjects = await getCollection("subject");
             </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
             {
                 lecturers.map(({ id, data }) => {
                     const currentSubjects = subjects.filter(
@@ -52,8 +52,8 @@ const subjects = await getCollection("subject");
                             item.data.practice?.id === id,
                     );
                     return (
-                        <Card className="overflow-hidden shadow-none py-0">
-                            <div class="flex justify-center py-0">
+                        <Card className="overflow-hidden shadow-none py-0 w-full mx-0 sm:mx-0">
+                            <div class="flex justify-center py-0 w-full">
                                 <div class="relative aspect-square overflow-hidden">
                                     <Image
                                         src={data.photo}

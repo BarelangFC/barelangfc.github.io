@@ -8,8 +8,8 @@ contents:
   - ./1.JPG
   - ./2.JPG
   - ./3.JPG
-  - ./4.jpg
-  - ./5.jpg
+  - ./4.JPG
+  - ./5.JPG
   - ./6.JPG
   - ./7.JPG
   - ./8.JPG
@@ -18,8 +18,8 @@ contents:
   - ./12.JPG
   - ./12.JPG
   - ./13.JPG
-  - ./14.jpg
-  - ./15.jpg
+  - ./14.JPG
+  - ./15.JPG
   - ./16.JPG
   - ./17.JPG
   - ./18.JPG
@@ -28,15 +28,15 @@ contents:
   - ./21.JPG
   - ./22.JPG
   - ./23.JPG
-  - ./24.jpg
-  - ./25.jpg
+  - ./24.JPG
+  - ./25.JPG
   - ./26.JPG
   - ./27.JPG
   - ./28.JPG
   - ./29.JPG
   - ./30.JPG
-  - ./31.JPG
-  - ./32.JPG
+  - ./31.jpg
+  - ./32.jpg
 
 ---
 
