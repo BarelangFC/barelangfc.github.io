@@ -2,17 +2,16 @@
 id: "strategy"
 name: "Strategy"
 icon: ./intelligent.png
-description: "Developing self-navigating robots for complex environments"
-longDescription:
-    "The Vision Division at Brail Polibatam specializes in developing advanced computer vision technologies for robotics, utilizing Python, OpenCV, and machine learning to create intelligent systems capable of real-time image analysis and object recognition. Their innovative approach focuses on pushing the boundaries of visual perception in robotic technologies, enabling robots to understand and interact with their environment more effectively through cutting-edge algorithmic solutions."
-projects: 
-  - "Autonomous Delivery Robot"
-  - "Self-Driving Campus Shuttle"
-  - "Exploration Rover"
-technologies: 
-  - "SLAM (Simultaneous Localization and Mapping)"
-  - "Path Planning Algorithms"
-  - "Sensor Fusion"
-  - "Computer Vision"
+description: "Designing intelligent strategies and decision-making systems for autonomous robots."
+longDescription: |
+  The Strategy Division at Brail Polibatam focuses on developing intelligent strategies and decision-making systems for autonomous robots. This division specializes in creating algorithms for real-time tactical planning, game theory, and adaptive behaviors, enabling robots to make optimal decisions in dynamic and competitive environments. By integrating advanced AI and simulation techniques, the Strategy Division ensures that robots can analyze situations, predict outcomes, and execute effective strategies during operation.
+projects:
+  - "Real-Time Tactical Planning"
+  - "Game Strategy Simulation"
+  - "Adaptive Decision-Making Systems"
+technologies:
+  - "Game Theory"
+  - "Multi-Agent Systems"
+  - "Simulation Tools"
 image: ./FotoTeam.png
 ---

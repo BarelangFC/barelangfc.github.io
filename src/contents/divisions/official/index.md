@@ -2,17 +2,17 @@
 id: "official"
 name: "Official"
 icon: ./official.png
-description: "Developing self-navigating robots for complex environments"
-longDescription:
-    "The Vision Division at Brail Polibatam specializes in developing advanced computer vision technologies for robotics, utilizing Python, OpenCV, and machine learning to create intelligent systems capable of real-time image analysis and object recognition. Their innovative approach focuses on pushing the boundaries of visual perception in robotic technologies, enabling robots to understand and interact with their environment more effectively through cutting-edge algorithmic solutions."
+description: "Managing administration, documentation, communication, and social media to support team operations."
+longDescription: |
+  The Official Division at Brail Polibatam plays a crucial role in managing the team's administration, documentation, and communication. This division is responsible for handling social media to share information and team achievements, as well as ensuring that all important files and documents are well-organized and easily accessible. With high dedication, the Official Division supports smooth team operations through effective coordination and accurate information dissemination.
 projects: 
-  - "Autonomous Delivery Robot"
-  - "Self-Driving Campus Shuttle"
-  - "Exploration Rover"
+  - "Team Administration Management"
+  - "Social Media Campaigns"
+  - "Documentation and Archiving"
 technologies: 
-  - "SLAM (Simultaneous Localization and Mapping)"
-  - "Path Planning Algorithms"
-  - "Sensor Fusion"
-  - "Computer Vision"
+  - "Content Management Systems (CMS)"
+  - "Cloud Storage Solutions"
+  - "Social Media Platforms"
+  - "Collaboration Tools"
 image: ./FotoTeam.png
 ---
