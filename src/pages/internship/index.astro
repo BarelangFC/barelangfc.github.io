@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import InternshipCheck from "../../components/internship-check";
+import fs from "node:fs";
+import path from "node:path";
+
+// Read raw markdown files directly
+const lulusPath = path.join(process.cwd(), "src/contents/internship/lulus.md");
+const tidakLulusPath = path.join(process.cwd(), "src/contents/internship/tidak-lulus.md");
+
+const lulusContent = fs.existsSync(lulusPath) ? fs.readFileSync(lulusPath, "utf-8") : "";
+const tidakLulusContent = fs.existsSync(tidakLulusPath) ? fs.readFileSync(tidakLulusPath, "utf-8") : "";
+---
+
+<Layout
+  title="Pengumuman Seleksi Magang - BarelangFC"
+  description="Cek hasil seleksi magang BarelangFC dengan memasukkan NIM Anda"
+>
+  <main class="min-h-screen py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <InternshipCheck
+      client:load
+      lulusData={lulusContent}
+      tidakLulusData={tidakLulusContent}
+    />
+  </main>
+</Layout>

@@ -46,5 +46,8 @@
       "@tsparticles/engine",
       "tsparticles-engine"
     ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
   }
 }

@@ -164,4 +164,13 @@ const album = defineCollection({
     })
 });
 
-export const collections = {teamMember, achievement, division, robot, publication, news: news, contacts, lecturer, subject, album};
+const internship = defineCollection({
+    loader: glob({pattern: "**/*.md", base: "./src/contents/internship"}),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        publishDate: z.date(),
+    })
+});
+
+export const collections = {teamMember, achievement, division, robot, publication, news: news, contacts, lecturer, subject, album, internship};

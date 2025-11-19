@@ -98,7 +98,7 @@
       let lastX = 0;
       let lastY = 0;
       let isMoving = false;
-      let moveTimeout: number | undefined;
+      let moveTimeout: ReturnType<typeof setTimeout> | undefined;
       
       // Track cursor position and update robot position in real-time
       document.addEventListener('mousemove', (e) => {
