@@ -2,6 +2,7 @@
 title: "Daftar Peserta Lolos Seleksi Magang"
 description: "Daftar NIM dan nama peserta yang lolos seleksi magang BarelangFC"
 publishDate: 2025-11-19
+whatsappGroupLink: "https://chat.whatsapp.com/Bb29JzFX56zJGwt8bOlvum"
 ---
 
 # Peserta yang Lolos Seleksi Magang

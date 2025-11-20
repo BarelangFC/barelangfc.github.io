@@ -170,6 +170,7 @@ const internship = defineCollection({
         title: z.string(),
         description: z.string(),
         publishDate: z.date(),
+        whatsappGroupLink: z.string().optional(),
     })
 });
 

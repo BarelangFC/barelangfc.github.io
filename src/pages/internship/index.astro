@@ -10,6 +10,16 @@ const tidakLulusPath = path.join(process.cwd(), "src/contents/internship/tidak-l
 
 const lulusContent = fs.existsSync(lulusPath) ? fs.readFileSync(lulusPath, "utf-8") : "";
 const tidakLulusContent = fs.existsSync(tidakLulusPath) ? fs.readFileSync(tidakLulusPath, "utf-8") : "";
+
+// Extract whatsappGroupLink from frontmatter using regex
+let whatsappGroupLink = "";
+const frontmatterMatch = lulusContent.match(/^---\n([\s\S]*?)\n---/);
+if (frontmatterMatch) {
+  const linkMatch = frontmatterMatch[1].match(/whatsappGroupLink:\s*["']?([^"'\n]+)["']?/);
+  if (linkMatch) {
+    whatsappGroupLink = linkMatch[1];
+  }
+}
 ---
 
 <Layout
@@ -21,6 +31,7 @@ const tidakLulusContent = fs.existsSync(tidakLulusPath) ? fs.readFileSync(tidakL
       client:load
       lulusData={lulusContent}
       tidakLulusData={tidakLulusContent}
+      whatsappGroupLink={whatsappGroupLink}
     />
   </main>
 </Layout>
