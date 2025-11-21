@@ -62,6 +62,8 @@ Berikut adalah daftar peserta yang **TIDAK LOLOS** seleksi magang BarelangFC:
 | 4242511030 | Yansen Syahputra Hutabarat |
 | 4332501025 | Zahratul Hasanah |
 
+
+| 4222401006 | Muhammad Akbar Iqvi |
 <!-- 
 Petunjuk pengisian:
 - Tambahkan baris baru dengan format: | NIM | Nama Lengkap |
