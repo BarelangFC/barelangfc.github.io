@@ -7,6 +7,7 @@ import { Link } from '@/components/link';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import TeamSection from '@/components/team-home';
+import FotoTeamImg from '../assets/FotoTeam.webp';
 const teamMembers = await getCollection("teamMember");
 const achievements = await getCollection("achievement");
 achievements.sort(function(a,b){
@@ -77,10 +78,11 @@ const lecturers = await getCollection("lecturer");
 				</div> -->
 			  </div>
 			   <div class="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
-				<img
-				  src="/FotoTeam.png?height=400&width=600"
+				<Image
+				  src={FotoTeamImg}
 				  alt="Robotics team working on a project"
 				  class="h-full w-auto object-contain ml-auto"
+				  loading="eager"
 				/>
 			  </div>
 			</div>

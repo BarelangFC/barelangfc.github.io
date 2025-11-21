@@ -14,9 +14,8 @@ import {
   MagnifyingGlassIcon,
   ArrowPathIcon,
   PhoneIcon,
-  EnvelopeIcon,
 } from "@heroicons/react/24/solid";
-import { SparklesIcon, LightBulbIcon, ClipboardDocumentListIcon } from "@heroicons/react/24/outline";
+import { SparklesIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import { InstagramIcon } from "./team-page";
 
 interface InternshipCheckProps {
