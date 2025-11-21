@@ -312,9 +312,10 @@ export default function InternshipCheck({ lulusData, tidakLulusData, whatsappGro
                         </p>
                       </div>
                       <ul className="text-sm sm:text-base text-gray-700 dark:text-gray-300 space-y-1 sm:space-y-2 list-disc list-inside">
-                        <li>Terus tingkatkan skill</li>
-                        <li>Coba lagi di kesempatan berikutnya</li>
-                        <li>Hubungi kami untuk feedback dan saran</li>
+                        <p className="mb-2">Masih ada banyak peluang lain yang bisa kamu coba di kesempatan berikutnya. Setiap proses selalu jadi pengalaman berharga, jadi jangan patah semangat.
+                        Terus belajar, dan terus berkembang, kelak dikesempatan berikutnya akan jadi momen keberhasilan kamu.</p>
+
+                        <p className="mb-2">Tenang saja, nanti akan ada pembukaan rekrutmen tim baru, kamu tetap bisa menjadi bagian dari kami. Jadi jangan sampai ketinggalan! Stay tuned on our Social Media!!</p>
                       </ul>
                     </div>
                   </div>
@@ -380,19 +381,25 @@ export default function InternshipCheck({ lulusData, tidakLulusData, whatsappGro
             Untuk informasi lebih lanjut, silakan hubungi:
           </p>
         </div>
-        <div className="flex items-center justify-center gap-2">
-          <EnvelopeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 dark:text-amber-400" />
-          <p className="font-bold text-base sm:text-lg text-amber-600 dark:text-amber-400 break-all">
-            barelangfc@gmail.com
-          </p>
-          <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 dark:text-pink-400" />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 w-full">
           <a
             href="https://www.instagram.com/barelangfc.polibatam/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-base sm:text-lg text-pink-500 dark:text-pink-400 hover:underline"
+            className="flex items-center gap-2 font-bold text-base sm:text-lg text-pink-500 dark:text-pink-400 hover:underline"
           >
-            @barelangfc.polibatam
+            <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 dark:text-pink-400" />
+            <span>@barelangfc.polibatam</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/barelang7.polibatam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 font-bold text-base sm:text-lg text-pink-500 dark:text-pink-400 hover:underline"
+          >
+            <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 dark:text-pink-400" />
+            <span>@barelang7.polibatam</span>
           </a>
         </div>
         <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2 sm:mt-3">
