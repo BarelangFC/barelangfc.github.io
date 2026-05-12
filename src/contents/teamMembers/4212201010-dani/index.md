@@ -6,7 +6,7 @@ angkatan: 2023-01-02
 division: "Programming"
 prodi: "D4 Teknik Mekatronika"
 bio: "No Game No Life"
-status: "Active"
+status: "Deactive"
 image: "/dani.png"
 education: 
   - degree: "S.Tr.T in D4 Teknik Mekatronika"

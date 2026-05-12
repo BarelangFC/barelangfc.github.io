@@ -4,15 +4,13 @@ name: "Mechanical"
 icon: ./mechanical.png
 description: "Developing self-navigating robots for complex environments"
 longDescription:
-    "The Vision Division at Brail Polibatam specializes in developing advanced computer vision technologies for robotics, utilizing Python, OpenCV, and machine learning to create intelligent systems capable of real-time image analysis and object recognition. Their innovative approach focuses on pushing the boundaries of visual perception in robotic technologies, enabling robots to understand and interact with their environment more effectively through cutting-edge algorithmic solutions."
+    "The Mechanical Division at Brail Polibatam focuses on designing and developing the structural and motion systems of advanced robotics by applying modern mechanical engineering principles. Utilizing precision fabrication techniques, lightweight yet durable materials, and optimized joint mechanisms, this division builds robust frameworks that ensure stability, flexibility, and balance in humanoid robots. Their approach emphasizes seamless mechanical integration with electronic and control systems to support smooth movement, structural reliability, and high performance in complex and dynamic environments."
 projects: 
-  - "Autonomous Delivery Robot"
-  - "Self-Driving Campus Shuttle"
-  - "Exploration Rover"
+  - "Humanoid Robot Structural Development"
+  - "Humanoid Robot Simulation Modeling"
 technologies: 
-  - "SLAM (Simultaneous Localization and Mapping)"
-  - "Path Planning Algorithms"
-  - "Sensor Fusion"
-  - "Computer Vision"
+  - "URDF Modeling (Unified Robot Description Format)"
+  - "Humanoid Robot Mechanical Design"
+  - "Humanoid Robot Chassis Structure Analysis"
 image: ./FotoTeam.png
 ---

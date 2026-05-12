@@ -6,7 +6,7 @@ angkatan: 2024-01-02
 division: "Electrical"
 prodi: "Teknik Robotika"
 bio: "Student College"
-status: "Active"
+status: "Deactive"
 image: "/bela.png"
 education: 
   - degree: "S.Tr.T in D4 Teknik Robotika"

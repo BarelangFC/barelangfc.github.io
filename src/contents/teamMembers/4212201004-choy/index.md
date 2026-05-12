@@ -6,7 +6,7 @@ angkatan: 2023-01-02
 division: "Programming"
 prodi: "D4 Teknik Mekatronika"
 bio: "yang nulis kata-kata sok asik."
-status: "Active"
+status: "Deactive"
 image: "/choy.png"
 education: 
   - degree: "D4"

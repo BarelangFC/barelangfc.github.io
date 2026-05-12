@@ -6,7 +6,7 @@ angkatan: 2023-01-02
 division: "Electrical"
 prodi: "D4 Teknik Mekatronika"
 bio: "Child of God ✝️"
-status: "Active"
+status: "Deactive"
 image: "/yohanes.png"
 education: 
   - degree: "Ph.D. in Computer Science"

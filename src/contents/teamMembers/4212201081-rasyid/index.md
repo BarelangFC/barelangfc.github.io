@@ -6,7 +6,7 @@ angkatan: 2024-01-02
 division: "Programming"
 prodi: "Teknik Mekatronika"
 bio: "Hidup tidak menjadi lebih baik secara kebetulan, tetapi melalui perubahan"
-status: "Active"
+status: "Deactive"
 image: "/rasyid.png"
 education: 
   - degree: "S.Tr.T in D4 Teknik Mekatronika"

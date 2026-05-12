@@ -6,7 +6,7 @@ angkatan: 2023-01-02
 division: "Programming"
 prodi: "D4 Teknik Mekatronika"
 bio: "Move through it, not against it."
-status: "Active"
+status: "Deactive"
 image: "/dimas.png"
 education: 
   - degree: "SMA - IPA"

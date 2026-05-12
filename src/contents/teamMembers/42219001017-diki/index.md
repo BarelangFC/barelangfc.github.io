@@ -1,6 +1,6 @@
 ---
 nim: 4222411039
-name: "Muhammad Hazza"
+name: "Diki saputra"
 role: "Member"
 angkatan: 2019-01-02
 division: "Mechanical"
